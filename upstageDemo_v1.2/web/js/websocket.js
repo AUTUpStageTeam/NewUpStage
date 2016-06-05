@@ -8,11 +8,9 @@ function onMessage(event) {
     }
 }
 
-function addDevice(name, type, description) {
+function addDevice(description) {
     var DeviceAction = {
         action: "add",
-        name: name,
-        type: type,
         description: description
     };
     socket.send(JSON.stringify(DeviceAction));
@@ -21,26 +19,18 @@ function addDevice(name, type, description) {
 function printDeviceElement(device) {
     var content = document.getElementById("content");
     var deviceDiv = document.createElement("div");
-    deviceDiv.setAttribute("id", device.id);
-    deviceDiv.setAttribute("class", "device " + device.type);
     content.appendChild(deviceDiv);
 
     var deviceDescription = document.createElement("span");
-    deviceDescription.innerHTML = "<b>Comments:</b> " + device.description;
+    deviceDescription.innerHTML = "<b>User:</b> " + device.description;
     deviceDiv.appendChild(deviceDescription);
 
 }
 
 function formSubmit() {
-    var form = document.getElementById("addDeviceForm");
-    var name = form.elements["device_name"].value;
-    var type = form.elements["device_type"].value;
+    var form = document.getElementById("chatBox");
     var description = form.elements["device_description"].value;
-    document.getElementById("addDeviceForm").reset();
-    addDevice(name, type, description);
-}
-
-function init() {
-    hideForm();
+    document.getElementById("chatBox").reset();
+    addDevice(description);
 }
 
