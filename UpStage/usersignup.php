@@ -3,6 +3,7 @@
 /* 
 =================================================================================
  + filename: usersignup.php
+ + info: contains back-end code for creating database and table for user signup (in case they don’t exist) and also for validating and putting data into the upstage_signup_request table. Sends automatic email using Gmail SMTP after successfully inserting the data. Also displays the result of the application for the user.
  + date: 18-08-2016 / last revised on: 25-08-2016
          18-08-2016: created the file and added database connection 
          19-08-2016: added date column and made code for initialising today's date
@@ -33,10 +34,9 @@ $reason = $_POST['reason'];
 echo "username: " . $username . " password: " . $password . " email: " . $email . " introduction: " . $introduction . " reason to join: " . $reason;
 
 // check if all the fields are not empty or null 
-
 if(empty($username) || empty($password) || empty($email) || empty($introduction) || empty($reason)) {
     
-    $signupResult ="<p>please contact the administrator of this UpStage server.</p>";
+    $signupResult ="<p>You have not put all the required fields.</p>";
     $signupResultTitle = "Sorry, something went wrong!";
     
 } else {

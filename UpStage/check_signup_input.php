@@ -6,6 +6,7 @@
  + date: 25-08-2016 / last revised on: 27-08-2016
          25-08-2016: created methods to check pattern for each required input
          27-08-2016: added comments and file info 
+         28-08-2016: changed password pattern
  + author : Minju Park (13839910)
 =============================================================================================
 */
@@ -21,7 +22,7 @@ function checkUsernamePattern($username_input) {
 
 /* returns whether password input matches the pattern or not */
 function checkPasswordPattern($password_input) {
-    if(preg_match('/(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[a-zA-Z]).*$/', $password_input)) {
+    if(preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,30}$/', $password_input)) {
         return true;
     } else {
         return false;

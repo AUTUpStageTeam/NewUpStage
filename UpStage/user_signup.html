@@ -7,7 +7,7 @@
  +       18-08-2016: created the html file
          20-08-2016: added nav bar 
          27-08-2016: seperated javascript file and included them using the src link
-         28-08-2016: made another jumbotron for describing username and password policy
+         28-08-2016: made another jumbotron for describing username and password policy and changed password pattern & policy
  + author : Minju Park (13839910)
 =================================================================================
 
@@ -18,7 +18,7 @@ pattern regex used.
 (?=\S+$): no white space allowed
 (?=.*\d): a digit must occur at least once
 (?=.*[a-z]): a lower case letter must occur at least once
-.{3,15}: minimu 3 characters, maximum 15 characters
+.{3,15}: minimum 3 characters, maximum 15 characters
 $: end of string
 
 -->
@@ -106,15 +106,15 @@ $: end of string
                                 <input type="text" class ="form-control" id="userName" name="username" minlength="3" maxlength="15" placeholder="Enter username" oninput="checkUsername(this)" onBlur="checkAvailability()" required/> 
                                 <span id="username-availability-status"></span><br/>
 
-                                <label for="e-mail">Email: <span class="required">* </span> </label>
-                                <input type="email" class="form-control" id="e-mail" name="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="your email is not valid" required/> <br/>
 
                                 <label for="pswd">Password: <span class="required">* </span></label>
-                                <input type="password" class="form-control" id="pswd" name="password" pattern="^(?=.*[a-z])(?=\S+$).{6,30}" title="Password must be minimum 6 characters, maximum 30 characters and combination of at least two of the following type: upper or lower case alphabet letters and numbers and special characters" placeholder="Enter password" required/> <br/>
+                                <input type="password" class="form-control" id="pswd" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,30}$" title="Password must be minimum 6 characters, maximum 30 characters and combination of each of the following types: alphabet letters and numbers and special characters." placeholder="Enter password" required/> <br/>
 
                                 <label for="conpswd">Confirm Password: <span class="required">* </span></label>
                                 <input type="password" class="form-control" id="conpswd" name="confirm_password" oninput="confirmPswd(this)" pattern=".{6,30}" placeholder="Confirm your password" required/> <br/>
-
+                                
+                                <label for="e-mail">Email: <span class="required">* </span> </label>
+                                <input type="email" class="form-control" id="e-mail" name="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="This field should be in email format" required/> <br/>
 
                                 <label for="introd">Introduction: <span class="required">* </span></label>
                                 <textarea class="form-control" id="introd" rows="5" name="introduction"  pattern=".{5,100}" oninput="checkIntroduction(this)" title="Please write more than 5 characters to introduce yourself." placeholder="Please introduce yourself" required></textarea> <br/>
@@ -130,7 +130,7 @@ $: end of string
                         <h4>UpStage Username and Password Policy</h4><br/>
                         
                         Username must be minimum 3 chracters, maximum 15 chracters. No Special characters. Capital letters not allowed. Alphabets come first. Can include numbers(0-9). <br/>
-                        Password must be minimum 6 characters, maximum 30 characters and combination of at least two of the following type: upper or lower case alphabet letters and numbers and special characters.
+                        Password must be minimum 6 characters, maximum 30 characters and combination of each of the following types: alphabet letters and numbers and special characters.
                     
                     </div>
                 </div>

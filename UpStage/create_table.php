@@ -13,10 +13,10 @@
 /* Creates database if there is no database called upstage and return true if query works */
 function checkDatabase($dbConnect, $dbnm) {
     if(mysqli_query($dbConnect, "CREATE DATABASE IF NOT EXISTS upstage")) {
-        echo "successfully created database";
+        //echo "successfully created database";
         return true;
     } else {
-        echo "failed to create database";
+        //echo "failed to create database";
         return false;
     }
 }
@@ -27,9 +27,9 @@ function isTable($dbConnect, $tableName) {
     $table_exists = mysqli_num_rows($checktable) > 0;
     
     if($table_exists) {
-        echo "table exists";
+        //echo "table exists";
     } else {
-        echo "table does not exist";
+        //echo "table does not exist";
     }
     
     return $table_exists;
