@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>signup_request</servlet-name>
+        <servlet-class>servlets.signup_request</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckUsernameAvailability</servlet-name>
+        <servlet-class>servlets.CheckUsernameAvailability</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>signup_request</servlet-name>
+        <url-pattern>/signup_request</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckUsernameAvailability</servlet-name>
+        <url-pattern>/CheckUsernameAvailability</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>user_signup.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

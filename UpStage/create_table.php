@@ -3,10 +3,10 @@
 /* 
 =================================================================================
  + filename: create_table.php
+ + author : Minju Park (13839910)
  + info: This file contains methods relating to creating signup request table and database for UpStage member registraton
  + date: 27-08-2016 / last revised on: 27-08-2016
          27-08-2016: created the file and added comments
- + author : Minju Park (13839910)
 =================================================================================
 */
 
